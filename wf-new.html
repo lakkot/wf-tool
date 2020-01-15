@@ -1,0 +1,78 @@
+<!Doctype html>
+<html>
+
+<head>
+  <title>create new worklfow</title>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="#" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,400i,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/styles.css" />
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <ul class="header-menu" id="left-menu">
+      <li>
+        <a href="index.html" class="header-menu__item">home</a>
+      </li>
+      <li>
+        <a href="#" class="header-menu__item">account</a>
+      </li>
+      <li>
+        <a href="#" class="header-menu__item">settings</a>
+      </li>
+      <li>
+        <a href="#" class="header-menu__item">about</a>
+      </li>
+    </ul>
+  </nav>
+  <nav>
+    <ul class="header-menu" id="right-menu">
+      <li>
+        <a href="wf-new.html" class="header-menu__item">new workflow</a>
+      </li>
+      <li>
+        <a href="#" class="header-menu__item">workflows list</a>
+      </li>
+      <li>
+        <a href="#" class="header-menu__item">new approver</a>
+      </li>
+      <li>
+        <a href="#" class="header-menu__item">approvers list</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<div class="new-wf-content">
+  <div class="new-wf-content__left">
+    <form action="#" method="post" class="new-wf-form">
+      <label class="label wf-form__item" for="wf-title">title</label>
+      <input class="wf-form__item" id="wf-title" required>
+      <label class="label wf-form__item" for="wf-description">description</label>
+      <textarea class="wf-form__item description" id="wf-description"></textarea>
+      <label class="label wf-form__item" for="wf-choose-approvers">choose approver group</label>
+      <input class="wf-form__item" id="wf-choose-approvers">
+    </form>
+  </div>
+  <div class="new-wf-content__right">
+    <iframe src="files/test.pdf" class="pdf-area"></iframe>
+    <form action="#" method="post" class="wf-form__buttons">
+      <label class="custom-file-upload">
+      <input type="file"/>
+        <i class="fa fa-cloud-upload">choose file</i>
+      </label>
+      <button type="submit" class="button" id="new-wf-submit">submit</button>
+    </form>
+  </div>
+</div>
+
+<footer class="page-footer">
+  <p>this is a footer</p>
+</footer>
+
+</body>
+</html>
