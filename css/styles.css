@@ -49,15 +49,16 @@ h1 {
 }
 
 .button, .custom-file-upload {
-  text-align: center;
-    text-decoration: none;
-    width: 120px;
-    border: 1px solid #ddd;
-    font-family: inherit;
-    background-color: white;
-    padding: 10px;
-    border-radius: 3px;
-    cursor: pointer;
+  text-align: center;]
+  text-transform: lowercase;
+  text-decoration: none;
+  width: 120px;
+  border: 1px solid #ddd;
+  font-family: inherit;
+  background-color: white;
+  padding: 10px;
+  border-radius: 3px;
+  cursor: pointer;
 }
 
 .button:hover, .custom-file-upload:hover {
@@ -207,4 +208,12 @@ input[type="file"] {
   flex-direction: column;
   width: 400px;
   margin: 0 auto;
+}
+
+.ag-form__hidden {
+  display: none !important;
+}
+
+.approver {
+  margin-top: 10px;
 }

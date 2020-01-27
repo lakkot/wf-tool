@@ -17,20 +17,38 @@
     <label class="label">group name</label>
     <input class="ag-form__item" required />
     <br />
+
+  <div class="approver approver1">
     <label class="label">approver 1 email</label>
     <input class="ag-form__item" type="email" required />
+  </div>
+
+  <div class="approver approver2">
     <label class="label">approver 2 email</label>
     <input class="ag-form__item" type="email" />
+  </div>
+
+  <div class="approver approver3">
     <label class="label">approver 3 email</label>
     <input class="ag-form__item" type="email" />
-    <label class="label">approver 4 email</label>
-    <input class="ag-form__item" type="email" />
-    <label class="label">approver 5 email</label>
-    <input class="ag-form__item" type="email" />
-    <div class="wf-form__buttons">
-    <button class="button" id="new-ag__button">add approver</button>
-    <input class="button" id="new-ag__button" type="submit" />
+  </div>
+
+    <div class="approver approver4 ag-form__hidden">
+      <label class="label">approver 4 email</label>
+      <input class="ag-form__item" type="email" />
     </div>
+
+    <div class="approver approver5 ag-form__hidden">
+      <label class="label">approver 5 email</label>
+      <input class="ag-form__item" type="email" />
+    </div>
+
+    <div class="wf-form__buttons">
+      <button class="button" id="add-approver" onclick="addApprover()" >add</button>
+      <button class="button" id="remove-approver" onclick="removeApprover()" >remove</button>
+      <input class="button" id="new-ag__button" type="submit" />
+    </div>
+
   </form>
 
 
