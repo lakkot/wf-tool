@@ -116,7 +116,7 @@ h1 {
 }
 
 
- .wf-form__item {
+ .wf-form__item, .ag-form__item {
    display: block;
    text-align: left;
    width: 380px;
@@ -124,13 +124,17 @@ h1 {
    padding-bottom: 10px;
  }
 
- .wf-form__buttons {
-   display: flex;
-   justify-content: space-between;
-   width: 100%;
-   min-width: 100px;
-   padding-top: 10px;
- }
+.wf-form__buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  min-width: 100px;
+  padding-top: 20px;
+}
+
+#new-ag__button {
+  margin-right: 20px;
+}
 
 input[type="file"] {
   padding: 10px 0 10px 10px;
@@ -196,4 +200,11 @@ td p {
 
 input[type="file"] {
     display: none;
+}
+
+.new-ag-form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin: 0 auto;
 }
