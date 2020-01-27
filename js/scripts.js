@@ -1,6 +1,6 @@
 
 
-//var $addApprover = document.querySelector('#add-approver');
+// add-remove approver buttons on ag-new.html
 var $approver2 = document.querySelector('.approver2');
 var $approver3 = document.querySelector('.approver3');
 var $approver4 = document.querySelector('.approver4');
