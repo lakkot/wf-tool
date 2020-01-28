@@ -10,8 +10,11 @@ var $approver3input = document.querySelector('#approver3input');
 var $approver4input = document.querySelector('#approver4input');
 var $approver5input = document.querySelector('#approver5input');
 
+var $addApprover = document.querySelector('#add-approver')
+var $removeApprover = document.querySelector('#remove-approver')
 
-function addApprover() {
+
+$addApprover.addEventListener('click', function addApprover() {
   if ($approver2.classList.contains('ag-form__hidden') === true) {
     $approver2.classList.toggle('ag-form__hidden');
   } else if ($approver3.classList.contains('ag-form__hidden') === true) {
@@ -21,9 +24,9 @@ function addApprover() {
   } else if ($approver5.classList.contains('ag-form__hidden') === true) {
     $approver5.classList.toggle('ag-form__hidden');
   }
-}
+});
 
-function removeApprover() {
+$removeApprover.addEventListener('click', function removeApprover() {
   if ($approver5.classList.contains('ag-form__hidden') === false) {
     $approver5.classList.toggle('ag-form__hidden');
     $approver5input.value = '';
@@ -37,4 +40,4 @@ function removeApprover() {
     $approver2.classList.toggle('ag-form__hidden');
     $approver2input.value = '';
   }
-}
+});
