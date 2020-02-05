@@ -3,9 +3,10 @@
 <html>
 
 <head>
-  <title>create new approver group</title>
+  <title>the workflow tool</title>
   <meta charset="utf-8">
   <link rel="shortcut icon" href="#" type="image/x-icon" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,400i,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
   <link rel="stylesheet" type="text/css" href="css/styles.css" />
@@ -13,46 +14,95 @@
 
 <body>
 
-  <form action="#" method="post" class="new-ag-form">
-    <label class="label">group name</label>
-    <input class="ag-form__item" required />
-    <br />
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.html">workflowtool</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="approver approver1">
-    <label class="label ag-form__item">approver 1 email</label>
-    <input class="ag-form__item" type="email" required />
-  </div>
-
-  <div class="approver approver2">
-    <label class="label ag-form__item">approver 2 email</label>
-    <input class="ag-form__item" id="approver2input" type="email" />
-  </div>
-
-  <div class="approver approver3">
-    <label class="label ag-form__item">approver 3 email</label>
-    <input class="ag-form__item" id="approver3input" type="email" />
-  </div>
-
-    <div class="approver approver4 ag-form__hidden">
-      <label class="label ag-form__item">approver 4 email</label>
-      <input class="ag-form__item" id="approver4input" type="email" />
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            admin
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">account</a>
+            <a class="dropdown-item" href="#">settings</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">about</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="wf-new.html">new workflow</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="wf-list.html">workflow list</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="ag-new.html">new approver group</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="ag-list.html">approvers list</a>
+        </li>
+      </ul>
     </div>
+  </nav>
 
-    <div class="approver approver5 ag-form__hidden">
-      <label class="label ag-form__item">approver 5 email</label>
-      <input class="ag-form__item" id="approver5input" type="email" />
+  <form class="col-6">
+    <div class="form-group">
+      <label for="group-name">group name</label>
+      <input type="text" class="form-control" id="group-name" aria-describedby="" required>
+      <small id="group-name__help" class="form-text text-muted">name your approver group</small>
     </div>
-
-    <div class="wf-form__buttons">
-      <button class="button" type="button" id="add-approver">add</button>
-      <button class="button" type="button" id="remove-approver">remove</button>
-      <input class="button" id="new-ag__button" type="submit" value="submit"/>
+    <div class="form-group approver1">
+      <label for="exampleInputEmail1">approver 1 email</label>
+      <input type="email" class="form-control" id="approver1input" aria-describedby="emailHelp">
     </div>
-
+    <div class="form-group approver2">
+      <label for="exampleInputEmail1">approver 2 email</label>
+      <input type="email" class="form-control" id="approver2input" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group approver3">
+      <label for="exampleInputEmail1">approver 3 email</label>
+      <input type="email" class="form-control" id="approver3input" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group approver4 d-none">
+      <label for="exampleInputEmail1">approver 4 email</label>
+      <input type="email" class="form-control" id="approver4input" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group approver5 d-none">
+      <label for="exampleInputEmail1">approver 5 email</label>
+      <input type="email" class="form-control" id="approver5input" aria-describedby="emailHelp">
+    </div>
+    <div class="d-flex justify-content-between">
+      <div>
+        <button class="btn btn-secondary" type="button" id="add-approver">Add</button>
+        <button class="btn btn-secondary" type="button" id="remove-approver">Remove</button>
+      </div>
+      <button type="button" class="btn btn-secondary col-4" id="ag-submit">Save</button>
+    </div>
   </form>
 
+  <!-- Footer -->
+  <footer class="footer page-footer navbar-dark bg-dark">
+    <div class="container justify-content-center">
+      <div class="row ">
+        <a class="col-md-3 mx-auto text-white" href="#!">impresum</a>
+        <a class="col-md-3 mx-auto text-white" href="#!">agb</a>
+        <a class="col-md-3 mx-auto text-white" href="#!">datenschutz</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright text-center py-1  text-white">
+      <p>theworkflowtool.com</p>
+    </div>
+  </footer>
 
-<script src=js/scripts.js></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  <script src="js/scripts.js"></script>
 </body>
 
 </html>

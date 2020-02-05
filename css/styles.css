@@ -5,6 +5,7 @@ html {
 body {
   position: relative;
   margin: 0;
+  font-family: 'Ubuntu', sans-serif;
   padding-bottom: 6rem;
   min-height: 100%;
 }
@@ -16,4 +17,30 @@ body {
   left: 0;
   text-align: center;
   padding-top: 10px;
+}
+
+.hide {
+  display: none;
+}
+
+.btn {
+  margin: 1px;
+}
+
+.ag-form-buttons {
+  display: inline;
+}
+
+form {
+  margin: 100px auto;
+}
+
+#add-approver {
+  width: 100px;
+  min-width: inherit;
+}
+
+#remove-approver {
+  width: 100px;
+  min-width: inherit;
 }
