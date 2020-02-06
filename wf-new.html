@@ -1,8 +1,9 @@
-<!Doctype html>
+<!DOCTYPE html>
+
 <html>
 
 <head>
-  <title>create new worklfow</title>
+  <title>the workflow tool</title>
   <meta charset="utf-8">
   <link rel="shortcut icon" href="#" type="image/x-icon" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -13,7 +14,7 @@
 
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="index.html">workflowtool</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -45,66 +46,97 @@
           <a class="nav-link" href="ag-list.html">approvers list</a>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      </form>
     </div>
   </nav>
 
-<div class="new-wf-content">
-  <div class="new-wf-content__left">
-    <form action="#" method="post" class="new-wf-form">
-      <label class="label wf-form__item" for="wf-title">title</label>
-      <input class="wf-form__item" id="wf-title" required>
-      <label class="label wf-form__item" for="wf-description">description</label>
-      <textarea class="wf-form__item description" id="wf-description"></textarea>
-      <label class="label wf-form__item" for="wf-choose-approvers">choose approver group</label>
-      <input class="wf-form__item" id="wf-choose-approvers">
+
+<div class="content">
+  <form class="col-6 row formalar">
+    <div class="wf-new-left col">
+      <div class="form-group">
+        <label for="group-name">Title</label>
+        <input type="text" class="form-control" id="wf-title" aria-describedby="" required>
+        <small id="group-name__help" class="form-text text-muted">name your workflow</small>
+      </div>
+      <div class="form-group">
+        <label for="wf-description">Description</label>
+        <textarea class="form-control" id="wf-description" rows="6"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="wf-ag-group">Choose approver group</label>
+        <select class="form-control" id="wf-ag-group">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
       <div>
-        <table class="wf-form__approvers">
-          <tr>
-            <td><p>1</p></td>
-            <td><p>approver1</p></td>
-          </tr>
-          <tr>
-            <td><p>2</p></td>
-            <td><p>approver2</p></td>
-          </tr>
-          <tr>
-            <td><p>3</p></td>
-            <td><p>approver3</p></td>
-          </tr>
-          <tr>
-            <td><p>4</p></td>
-            <td><p>approver4</p></td>
-          </tr>
-          <tr>
-            <td><p>5</p></td>
-            <td><p>approver5</p></td>
-          </tr>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Approver</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="wf-approver1"></td>
+              <td>pending</td>
+            </tr>
+            <tr id="wf-approver2__row">
+              <td id="wf-approver2"></td>
+              <td>pending</td>
+            </tr>
+            <tr id="wf-approver3__row">
+              <td id="wf-approver3"></td>
+              <td>pending</td>
+            </tr>
+            <tr id="wf-approver4__row">
+              <td id="wf-approver4"></td>
+              <td>pending</td>
+            </tr>
+            <tr id="wf-approver5__row">
+              <td id="wf-approver5"></td>
+              <td>pending</td>
+            </tr>
+          </tbody>
         </table>
       </div>
-    </form>
-  </div>
-  <div class="new-wf-content__right">
-    <iframe src="files/test.pdf" class="pdf-area"></iframe>
-    <form action="#" method="post" class="wf-form__buttons">
-      <label class="custom-file-upload">
-      <input type="file"/>
-        <i class="fa fa-cloud-upload">choose file</i>
-      </label>
-      <button type="submit" class="button" id="new-wf-submit">submit</button>
-    </form>
-  </div>
+    </div>
+
+    <div class="wf-new-right col">
+      <iframe src="files/test.pdf" class="pdf-area"></iframe>
+        <div class="input-group mb-3 ">
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="upload-wf-file">
+            <label class="custom-file-label" for="upload-wf-file">Choose file</label>
+          </div>
+          <div class="input-group-append">
+            <span class="input-group-text" id="">Upload</span>
+          </div>
+        </div>
+        <div class="submit-area">
+          <button type="submit" class="btn btn-secondary col-4" id="wf-submit">Save</button>
+        </div>
+    </div>
+
+  </form>
 </div>
 
-<footer class="page-footer">
-  <p>this is a footer</p>
-</footer>
 
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-  <script src="js/scripts.js"></script>
+  <!-- Footer -->
+  <footer class="footer page-footer navbar-dark bg-dark">
+    <div class="footer-copyright text-center text-white">
+      <p>theworkflowtool.com</p>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  <script src="js/wf-new.js"></script>
 </body>
+
 </html>

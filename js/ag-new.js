@@ -56,7 +56,7 @@ $removeApprover.addEventListener('click', function removeApprover() {
   }
 });
 
-
+/*
 
 $agSubmit = document.querySelector('#ag-submit')
 $agSubmit.addEventListener('click', function() {
@@ -72,3 +72,4 @@ $agSubmit.addEventListener('click', function() {
 
   //approvers.push(object);
 })
+*/

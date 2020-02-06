@@ -44,3 +44,24 @@ form {
   width: 100px;
   min-width: inherit;
 }
+
+iframe {
+  width: 100%;
+  min-width: 430px;
+  height: 100%;
+  min-height: 600px;
+}
+
+.formalar {
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+.content {
+  padding-bottom: 30px;
+}
+
+.submit-area {
+  display: flex;
+  justify-content: flex-end;
+}
