@@ -10,6 +10,10 @@ body {
   min-height: 100%;
 }
 
+.content {
+  padding-bottom: 60px;
+}
+
 .footer {
   position: absolute;
   right: 0;
@@ -47,9 +51,12 @@ form {
 
 iframe {
   width: 100%;
-  min-width: 230px;
-  height: 90%;
+  min-width: 320px;
+  height: 100%;
+  min-height: 452px;
+  overflow: hidden;
 }
+
 
 
 .formalar {
@@ -58,17 +65,24 @@ iframe {
   height: 800px;
 }
 
-.content {
-  padding-bottom: 60px;
-}
+
 
 .submit-area {
-  display: flex;
-  justify-content: flex-end;
+  margin-top: 20px;
 }
 
 .table-button {
   text-align: left;
   border: none;
   margin-left: 0;
+}
+
+.submit-button-div {
+  display: flex;
+  height: 40px;
+  justify-content: flex-end;
+}
+
+.wf-new-left {
+  min-width: 320px;
 }
