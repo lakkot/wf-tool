@@ -144,21 +144,20 @@ $(document).ready(function(){
 
 
 $("button").click(function() {
-    var fired_button = $(this).text();
-      index = approvers.findIndex(item => item.name === fired_button);
-    $('#exampleModal').on('show.bs.modal', function (event) {
-      var button = $(event.relatedTarget) // Button that triggered the modal
-      var recipient = fired_button;
-      console.log(recipient); // Extract info from data-* attributes
-      // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-      // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-      var modal = $(this)
-      modal.find('.modal-title').text(recipient)
-      modal.find('#modal-appr1').val(approvers[index].appr1);
-      modal.find('#modal-appr2').val(approvers[index].appr2);
-      modal.find('#modal-appr3').val(approvers[index].appr3);
-      modal.find('#modal-appr4').val(approvers[index].appr4);
-      modal.find('#modal-appr5').val(approvers[index].appr5);
-
-    })
+  var fired_button = $(this).text();
+  index = approvers.findIndex(item => item.name === fired_button);
+  $('#exampleModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget) // Button that triggered the modal
+    var recipient = fired_button;
+    console.log(recipient); // Extract info from data-* attributes
+    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+    var modal = $(this)
+    modal.find('.modal-title').text(recipient)
+    modal.find('#modal-appr1').val(approvers[index].appr1);
+    modal.find('#modal-appr2').val(approvers[index].appr2);
+    modal.find('#modal-appr3').val(approvers[index].appr3);
+    modal.find('#modal-appr4').val(approvers[index].appr4);
+    modal.find('#modal-appr5').val(approvers[index].appr5);
+  })
 });
