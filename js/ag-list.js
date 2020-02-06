@@ -1,8 +1,8 @@
 var approvers = [
-  {name: 'gr1', appr1: 'lakkot83@gmail.com', appr2: 'michal.lichota@outlook.com', appr3: 'michal.lichota@hotmail.com', appr4: '', appr5: ''},
-  {name: 'gr2', appr1: 'michal.lichota@outlook.com', appr2: 'lakkot83@gmail.com', appr3: 'michal.lichota@hotmail.com', appr4: '', appr5: ''},
-  {name: 'gr3', appr1: 'michal.lichota@hotmail.com', appr2: 'michal.lichota@outlook.com', appr3: 'nowaera@gmail.com', appr4: '', appr5: ''},
-  {name: 'gr4', appr1: 'nowaera@gmail.com', appr2: 'michal.lichota@outlook.com', appr3: 'lakkot83@gmail.com', appr4: '', appr5: ''}
+  {name: 'Group 1', appr1: 'lakkot83@gmail.com', appr2: 'michal.lichota@outlook.com', appr3: 'michal.lichota@hotmail.com', appr4: '', appr5: ''},
+  {name: 'Group 2', appr1: 'michal.lichota@outlook.com', appr2: 'lakkot83@gmail.com', appr3: 'michal.lichota@hotmail.com', appr4: '', appr5: ''},
+  {name: 'Group 3', appr1: 'michal.lichota@hotmail.com', appr2: 'michal.lichota@outlook.com', appr3: 'nowaera@gmail.com', appr4: '', appr5: ''},
+  {name: 'Group 4', appr1: 'nowaera@gmail.com', appr2: 'michal.lichota@outlook.com', appr3: 'lakkot83@gmail.com', appr4: '', appr5: ''}
 ]
 
 console.log(approvers);
@@ -29,30 +29,44 @@ function addListItem(item) {
 
   $agTableitem1 = document.createElement('th');
   $agTableitem1.classList.add('ag-col0');
-  $agTableitem1.innerText = item.name;
-
+/*
+  $agTableButton = document.createElement('button');
+  $agTableButton.classList.add('col');
+  $agTableButton.classList.add('table-button'); //btn btn-outline-dark align-middle
+  $agTableButton.classList.add('btn');
+  $agTableButton.classList.add('btn-outline-dark');
+  $agTableButton.innerText = item.name;
+*/
+  var $agTableButton = $('<button type="button" class="btn btn-outline-dark col table-button" data-toggle="modal" data-target="#exampleModal"></button>').text(item.name);
+  $($agTableitem1).append($agTableButton);
 
   $agTableitem2 = document.createElement('td');
   $agTableitem2.classList.add('ag-col1');
+  $agTableitem2.classList.add('align-middle');
   $agTableitem2.innerText = item.appr1;
 
   $agTableitem3 = document.createElement('td');
   $agTableitem3.classList.add('ag-col2');
+  $agTableitem3.classList.add('align-middle');
   $agTableitem3.innerText = item.appr2;
 
   $agTableitem4 = document.createElement('td');
   $agTableitem4.classList.add('ag-col3');
+  $agTableitem4.classList.add('align-middle');
   $agTableitem4.innerText = item.appr3;
 
   $agTableitem5 = document.createElement('td');
   $agTableitem5.classList.add('ag-col4');
+  $agTableitem5.classList.add('align-middle');
   $agTableitem5.innerText = item.appr4;
 
   $agTableitem6 = document.createElement('td');
   $agTableitem6.classList.add('ag-col5');
+  $agTableitem6.classList.add('align-middle');
   $agTableitem6.innerText = item.appr5;
 
   $agTableLine.appendChild($agTableitem1);
+  //$agTableitem1.appendChild($agTableButton);
   $agTableLine.appendChild($agTableitem2);
   $agTableLine.appendChild($agTableitem3);
   $agTableLine.appendChild($agTableitem4);
@@ -126,4 +140,25 @@ $(document).ready(function(){
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
   });
+});
+
+
+$("button").click(function() {
+    var fired_button = $(this).text();
+      index = approvers.findIndex(item => item.name === fired_button);
+    $('#exampleModal').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget) // Button that triggered the modal
+      var recipient = fired_button;
+      console.log(recipient); // Extract info from data-* attributes
+      // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+      // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+      var modal = $(this)
+      modal.find('.modal-title').text(recipient)
+      modal.find('#modal-appr1').val(approvers[index].appr1);
+      modal.find('#modal-appr2').val(approvers[index].appr2);
+      modal.find('#modal-appr3').val(approvers[index].appr3);
+      modal.find('#modal-appr4').val(approvers[index].appr4);
+      modal.find('#modal-appr5').val(approvers[index].appr5);
+
+    })
 });
