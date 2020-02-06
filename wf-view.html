@@ -62,7 +62,7 @@
       </div>
       <div class="form-group">
         <label for="wf-description">Description</label>
-        <textarea class="form-control" id="wf-description" rows="8"></textarea>
+        <textarea class="form-control" id="wf-description" rows="6"></textarea>
       </div>
       <div class="input-group mb-3 form-group">
         <div class="custom-file">
@@ -76,7 +76,11 @@
       <div class="form-group">
         <label for="wf-ag-group">Choose approver group</label>
         <select class="form-control" id="wf-ag-group">
-          <!--list of approver groups prints here-->
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
         </select>
       </div>
       <div>
@@ -84,23 +88,29 @@
           <thead>
             <tr>
               <th scope="col">Approver</th>
+              <th scope="col">Status</th>
             </tr>
           </thead>
           <tbody>
-            <tr id="wf-approver1__row">
-              <td class="wf-approver" id="wf-approver1"></td>
+            <tr>
+              <td id="wf-approver1"></td>
+              <td>pending</td>
             </tr>
             <tr id="wf-approver2__row">
-              <td class="wf-approver" id="wf-approver2"></td>
+              <td id="wf-approver2"></td>
+              <td>pending</td>
             </tr>
             <tr id="wf-approver3__row">
-              <td class="wf-approver" id="wf-approver3"></td>
+              <td id="wf-approver3"></td>
+              <td>pending</td>
             </tr>
             <tr id="wf-approver4__row">
-              <td class="wf-approver" id="wf-approver4"></td>
+              <td id="wf-approver4"></td>
+              <td>pending</td>
             </tr>
             <tr id="wf-approver5__row">
-              <td class="wf-approver" id="wf-approver5"></td>
+              <td id="wf-approver5"></td>
+              <td>pending</td>
             </tr>
           </tbody>
         </table>

@@ -47,14 +47,15 @@ form {
 
 iframe {
   width: 100%;
-  min-width: 430px;
+  min-width: 230px;
   height: 90%;
-  min-height: 600px;
 }
+
 
 .formalar {
   margin: 0 auto;
   padding-top: 40px;
+  height: 800px;
 }
 
 .content {
