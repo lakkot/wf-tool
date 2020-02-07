@@ -53,28 +53,20 @@
 <div class="content">
 
   <form class="col-6 formalar">
+    <div class="row">
 
+
+
+
+      <div class="wf-new-left col-6">
         <div class="form-group">
           <label for="group-name">Title</label>
           <input type="text" class="form-control" id="wf-title" aria-describedby="" required>
           <small id="group-name__help" class="form-text text-muted">name your workflow</small>
         </div>
-
         <div class="form-group">
           <label for="wf-description">Description</label>
           <textarea class="form-control" id="wf-description" rows="8"></textarea>
-        </div>
-
-        <div class="input-group mb-3 form-group upload-file">
-          <div class="custom-file">
-            <input type="file" class="custom-file-input" id="upload-wf-file">
-            <label class="custom-file-label" for="upload-wf-file">Choose file</label>
-          </div>
-          <!--
-          <div class="input-group-append">
-            <span class="input-group-text" id="">Upload</span>
-          </div>
-        -->
         </div>
 
         <div class="form-group">
@@ -110,11 +102,31 @@
           </table>
         </div>
 
-        <div class="submit-area row">
-          <div class="col submit-button-div">
-            <button type="submit" class="btn btn-secondary col-4" id="wf-submit">Submit</button>
+      </div>
+
+      <div class="wf-new-right col">
+          <iframe src="files/test.pdf" class="pdf-area form-group"></iframe>
+      </div>
+
+      </div>
+      <div class="submit-area row">
+        <div class="col-6">
+        <div class="input-group mb-3 form-group upload-file">
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="upload-wf-file">
+            <label class="custom-file-label" for="upload-wf-file">Choose file</label>
           </div>
+          <!--
+          <div class="input-group-append">
+            <span class="input-group-text" id="">Upload</span>
+          </div>
+        -->
         </div>
+      </div>
+      <div class="col-6 submit-button-div">
+        <button type="submit" class="btn btn-secondary col-4" id="wf-submit">Save</button>
+      </div>
+    </div>
 
   </form>
 
@@ -131,7 +143,7 @@
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-  <script src="js/wf-new.js"></script>
+  <script src="js/wf-new-old.js"></script>
 </body>
 
 </html>

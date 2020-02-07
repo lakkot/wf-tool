@@ -90,10 +90,10 @@ approvers.getAll().forEach(function(item) {
 
 var workflowsList = (function() {
   var workflows = [
-    {name: 'workflow 1', desc: 'first workflow to be tested', file: 'files/test.pdf',appr1: '', isappr1: '', appr2: '', isappr2: '', appr3: '', isappr3: '', appr4: '', isappr4: '', appr5: '', isappr5: '', status: 'pending'},
-    {name: 'workflow 2', desc: 'second workflow to be tested', file: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',appr1: '', isappr1: '', appr2: '', isappr2: '', appr3: '', isappr3: '', appr4: '', isappr4: '', appr5: '', isappr5: '', status: 'pending'},
-    {name: 'workflow 3', desc: 'third workflow to be tested', file: 'https://www.adobe.com/support/products/enterprise/knowledgecenter/media/c4611_sample_explain.pdf',appr1: '', isappr1: '', appr2: '', isappr2: '', appr3: '', isappr3: '', appr4: '', isappr4: '', appr5: '', isappr5: '', status: 'approved'},
-    {name: 'workflow 4', desc: 'fourth workflow to be tested', file: 'http://unec.edu.az/application/uploads/2014/12/pdf-sample.pdf',appr1: '', isappr1: '', appr2: '', isappr2: '', appr3: '', isappr3: '', appr4: '', isappr4: '', appr5: '', isappr5: '', status: 'rejected'}
+    {name: 'workflow 1', desc: 'first workflow to be tested', file: 'files/test.pdf',appr1: 'lakkot83@gmail.com', isappr1: true, appr2: 'michal.lichota@outlook.com', isappr2: true, appr3: 'michal.lichota@hotmail.com', isappr3: true, appr4: '', isappr4: '', appr5: '', isappr5: '', status: 'approved'},
+    {name: 'workflow 2', desc: 'second workflow to be tested', file: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',appr1: 'nowaera@gmail.com', isappr1: true, appr2: 'michal.lichota@outlook.com', isappr2: true, appr3: 'lakkot83@gmail.com', isappr3: '', appr4: 'michal.lichota@hotmail.com', isappr4: '', appr5: '', isappr5: '', status: 'pending'},
+    {name: 'workflow 3', desc: 'third workflow to be tested', file: 'https://www.adobe.com/support/products/enterprise/knowledgecenter/media/c4611_sample_explain.pdf',appr1: 'michal.lichota@outlook.com', isappr1: true, appr2: 'lakkot83@gmail.com', isappr2: false, appr3: 'nowaera@gmail.com', isappr3: '', appr4: '', isappr4: '', appr5: '', isappr5: '', status: 'rejected'},
+    {name: 'workflow 4', desc: 'fourth workflow to be tested', file: 'http://unec.edu.az/application/uploads/2014/12/pdf-sample.pdf',appr1: '', isappr1: '', appr2: '', isappr2: '', appr3: '', isappr3: '', appr4: '', isappr4: '', appr5: '', isappr5: '', status: 'pending'}
   ]
 
   var $wfTable = document.querySelector('#wf-table');
