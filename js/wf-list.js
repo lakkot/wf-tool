@@ -1,5 +1,5 @@
 
-
+/**********************start new workflow modal*******************************/
 
 var approvers = (function() {
 
@@ -73,15 +73,9 @@ var approvers = (function() {
     clearList: clearList,
     placeHolder: placeHolder,
     approverGroups: approverGroups
-
   }
 
 }());
-
-
-
-
-
 
 //clear approvers list, insert placeholder and name for each object form approvers array
 approvers.clearList();
@@ -89,3 +83,5 @@ approvers.placeHolder();
 approvers.getAll().forEach(function(item) {
   approvers.approverGroups(item);
 })
+
+/**********************end new workflow modal*******************************/

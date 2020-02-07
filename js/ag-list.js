@@ -69,7 +69,7 @@ function addListItem(item) {
   $agTableButton.classList.add('btn-outline-dark');
   $agTableButton.innerText = item.name;
 */
-  var $agTableButton = $('<button type="button" class="btn btn-outline-dark col table-button" data-toggle="modal" data-target="#exampleModal"></button>').text(item.name);
+  var $agTableButton = $('<button type="button" class="btn btn-outline-dark col table-button" data-toggle="modal" data-target="#ag-list"></button>').text(item.name);
   $($agTableitem1).append($agTableButton);
 
   $agTableitem2 = document.createElement('td');
@@ -178,7 +178,7 @@ $(document).ready(function(){
 $("button").click(function() {
   var fired_button = $(this).text();
   index = approvers.findIndex(item => item.name === fired_button);
-  $('#exampleModal').on('show.bs.modal', function (event) {
+  $('#ag-list').on('show.bs.modal', function (event) {
     var button = $(event.relatedTarget) // Button that triggered the modal
     var recipient = fired_button;
     console.log(recipient); // Extract info from data-* attributes

@@ -52,77 +52,80 @@
 
 <div class="content">
 
-  <form class="col-6 row formalar">
+  <form class="col-6 formalar">
+    <div class="row">
 
-    <div class="wf-new-left col">
-      <div class="form-group">
-        <label for="group-name">Title</label>
-        <input type="text" class="form-control" id="wf-title" aria-describedby="" required>
-        <small id="group-name__help" class="form-text text-muted">name your workflow</small>
-      </div>
-      <div class="form-group">
-        <label for="wf-description">Description</label>
-        <textarea class="form-control" id="wf-description" rows="6"></textarea>
-      </div>
-      <div class="input-group mb-3 form-group">
-        <div class="custom-file">
-          <input type="file" class="custom-file-input" id="upload-wf-file">
-          <label class="custom-file-label" for="upload-wf-file">Choose file</label>
+
+
+
+      <div class="wf-new-left col-6">
+        <div class="form-group">
+          <label for="group-name">Title</label>
+          <input type="text" class="form-control" id="wf-title" aria-describedby="" required>
+          <small id="group-name__help" class="form-text text-muted">name your workflow</small>
         </div>
-        <div class="input-group-append">
-          <span class="input-group-text" id="">Upload</span>
+        <div class="form-group">
+          <label for="wf-description">Description</label>
+          <textarea class="form-control" id="wf-description" rows="8"></textarea>
         </div>
-      </div>
-      <div class="form-group">
-        <label for="wf-ag-group">Choose approver group</label>
-        <select class="form-control" id="wf-ag-group">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-      </div>
-      <div>
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">Approver</th>
-              <th scope="col">Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td id="wf-approver1"></td>
-              <td>pending</td>
-            </tr>
-            <tr id="wf-approver2__row">
-              <td id="wf-approver2"></td>
-              <td>pending</td>
-            </tr>
-            <tr id="wf-approver3__row">
-              <td id="wf-approver3"></td>
-              <td>pending</td>
-            </tr>
-            <tr id="wf-approver4__row">
-              <td id="wf-approver4"></td>
-              <td>pending</td>
-            </tr>
-            <tr id="wf-approver5__row">
-              <td id="wf-approver5"></td>
-              <td>pending</td>
-            </tr>
-          </tbody>
-        </table>
+
+        <div class="form-group">
+          <label for="wf-ag-group">Choose approver group</label>
+          <select class="form-control" id="wf-ag-group">
+            <!--list of approver groups prints here-->
+          </select>
+        </div>
+        <div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Approver</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="wf-approver1__row">
+                <td class="wf-approver" id="wf-approver1"></td>
+              </tr>
+              <tr id="wf-approver2__row">
+                <td class="wf-approver" id="wf-approver2"></td>
+              </tr>
+              <tr id="wf-approver3__row">
+                <td class="wf-approver" id="wf-approver3"></td>
+              </tr>
+              <tr id="wf-approver4__row">
+                <td class="wf-approver" id="wf-approver4"></td>
+              </tr>
+              <tr id="wf-approver5__row">
+                <td class="wf-approver" id="wf-approver5"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
       </div>
-    </div>
 
-    <div class="wf-new-right col-7">
-        <iframe src="files/test.pdf" class="pdf-area form-group"></iframe>
-        <div class="submit-area">
-          <button type="submit" class="btn btn-secondary col-4" id="wf-submit">Save</button>
+      <div class="wf-new-right col">
+          <iframe src="files/test.pdf" class="pdf-area form-group"></iframe>
+      </div>
+
+      </div>
+      <div class="submit-area row">
+        <div class="col-6">
+        <div class="input-group mb-3 form-group upload-file">
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="upload-wf-file">
+            <label class="custom-file-label" for="upload-wf-file">Choose file</label>
+          </div>
+          <!--
+          <div class="input-group-append">
+            <span class="input-group-text" id="">Upload</span>
+          </div>
+        -->
         </div>
+      </div>
+      <div class="col-6 submit-button-div">
+        <button type="submit" class="btn btn-secondary col-4" id="wf-submit">Save</button>
+      </div>
     </div>
 
   </form>

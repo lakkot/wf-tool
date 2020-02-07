@@ -78,6 +78,7 @@ iframe {
 }
 
 .submit-button-div {
+  margin-top: 5px;
   display: flex;
   height: 40px;
   justify-content: flex-end;
