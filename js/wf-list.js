@@ -82,6 +82,106 @@ approvers.clearList();
 approvers.placeHolder();
 approvers.getAll().forEach(function(item) {
   approvers.approverGroups(item);
-})
+});
 
 /**********************end new workflow modal*******************************/
+
+/********************** load workflows list ********************************/
+
+var workflowsList = (function() {
+  var workflows = [
+    {name: 'workflow 1', desc: 'first workflow to be tested', file: 'files/test.pdf',appr1: '', isappr1: '', appr2: '', isappr2: '', appr3: '', isappr3: '', appr4: '', isappr4: '', appr5: '', isappr5: '', status: 'pending'},
+    {name: 'workflow 2', desc: 'second workflow to be tested', file: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',appr1: '', isappr1: '', appr2: '', isappr2: '', appr3: '', isappr3: '', appr4: '', isappr4: '', appr5: '', isappr5: '', status: 'pending'},
+    {name: 'workflow 3', desc: 'third workflow to be tested', file: 'https://www.adobe.com/support/products/enterprise/knowledgecenter/media/c4611_sample_explain.pdf',appr1: '', isappr1: '', appr2: '', isappr2: '', appr3: '', isappr3: '', appr4: '', isappr4: '', appr5: '', isappr5: '', status: 'approved'},
+    {name: 'workflow 4', desc: 'fourth workflow to be tested', file: 'http://unec.edu.az/application/uploads/2014/12/pdf-sample.pdf',appr1: '', isappr1: '', appr2: '', isappr2: '', appr3: '', isappr3: '', appr4: '', isappr4: '', appr5: '', isappr5: '', status: 'rejected'}
+  ]
+
+  var $wfTable = document.querySelector('#wf-table');
+  var $wfName = document.querySelector('.wf-col0');
+  var $wfName = document.querySelector('.wf-col1');
+  var $wfDescription = document.querySelector('.wf-col2');
+  var $wfFile = document.querySelector('.wf-col3')
+
+  function getAll() {
+    return workflows;
+  }
+
+  function clearTable() {
+      $wfTable.innerHTML = '';
+  }
+
+  function addListItem(item) {
+
+    var $wfTableLine = document.createElement('tr');
+    $wfTable.appendChild($wfTableLine);
+
+    var $wfTableItem1 = document.createElement('th');
+    $wfTableItem1.classList.add('align-middle');
+    $wfTableItem1.classList.add('wf-col-0');
+    $wfTableLine.appendChild($wfTableItem1);
+
+
+    var $wfTableButton = $('<button type="button" class="btn btn-outline-dark col table-button" data-toggle="modal" data-target="#ag-list"></button>').text(item.name);
+    $($wfTableItem1).append($wfTableButton);
+
+    var $wfTableItem2 = document.createElement('td');
+    $wfTableItem2.classList.add('wf-col-1');
+    $wfTableItem2.classList.add('align-middle');
+    $wfTableItem2.innerText = item.status;
+    $wfTableLine.appendChild($wfTableItem2);
+
+
+    var $wfTableItem3 = document.createElement('td');
+    $wfTableItem3.classList.add('wf-col-2');
+    $wfTableItem3.classList.add('align-middle');
+
+    $wfTableItem3.innerText = item.desc;
+    $wfTableLine.appendChild($wfTableItem3);
+
+
+    var $wfTableItem4 = document.createElement('td');
+    $wfTableItem4.classList.add('wf-col-3');
+    $wfTableItem4.classList.add('align-middle');
+
+    $wfTableLine.appendChild($wfTableItem4);
+
+
+    var $wfTableLink = document.createElement('a')
+    $wfTableLink.classList.add('text-secondary');
+    $wfTableLink.innerHTML = '<a target=_blank href=' + item.file + '>open file</a>';
+    $wfTableItem4.appendChild($wfTableLink);
+  }
+
+  $(document).ready(function(){
+    $('#search-field-wf').on('keyup', function() {
+      var value = $(this).val().toLowerCase();
+      $('#wf-table tr').filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+
+  clearTable();
+  workflows.forEach(function(item) {
+    addListItem(item);
+  })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  return {
+    getAll: getAll
+  }
+
+}());

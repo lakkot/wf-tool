@@ -14,7 +14,7 @@
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="index.html">workflowtool</a>
+    <a class="navbar-brand" href="index.html">TheWorkflowTool</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -23,30 +23,25 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            admin
+            Admin
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">account</a>
-            <a class="dropdown-item" href="#">settings</a>
+            <a class="dropdown-item" href="#">Account</a>
+            <a class="dropdown-item" href="#">Settings</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">about</a>
+            <a class="dropdown-item" href="#">About</a>
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="wf-new.html">new workflow</a>
+          <a class="nav-link" href="wf-list.html">Workflows</a>
         </li>
+
         <li class="nav-item">
-          <a class="nav-link" href="wf-list.html">workflow list</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="ag-new.html">new approver group</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="ag-list.html">approvers list</a>
+          <a class="nav-link" href="ag-list.html">Approver groups</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
-        <input id='search-field' class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <input id='search-field-wf' class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       </form>
     </div>
   </nav>
@@ -130,17 +125,37 @@
                     <button type="submit" class="btn btn-secondary col-4" id="wf-submit">Submit</button>
                   </div>
                 </div>
-
           </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Submit</button>
+          <button type="button" class="btn btn-secondary">Submit</button>
         </div>
       </div>
     </div>
   </div>
   <!--end modal-->
+</br>
+  <!-- table - filled with JS -->
+  <table class="table col">
+    <thead>
+      <tr>
+        <th scope="col">Worklfow name</th>
+        <th scope="col">Status</th>
+        <th scope="col">Description</th>
+        <th scope="col">Attachment</th>
+      </tr>
+    </thead>
+    <tbody id='wf-table'>
+      <tr>
+        <td class="wf-col0">wf name</td>
+        <td class="wf-col1">pending</td>
+        <td class="wf-col2">placeholder description</td>
+        <td class="wf-col3">file</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- end table -->
 
 
 

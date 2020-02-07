@@ -14,7 +14,7 @@
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="index.html">workflowtool</a>
+    <a class="navbar-brand" href="index.html">TheWorkflowTool</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -23,36 +23,30 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            admin
+            Admin
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">account</a>
-            <a class="dropdown-item" href="#">settings</a>
+            <a class="dropdown-item" href="#">Account</a>
+            <a class="dropdown-item" href="#">Settings</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">about</a>
+            <a class="dropdown-item" href="#">About</a>
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="wf-new.html">new workflow</a>
+          <a class="nav-link" href="wf-list.html">Workflows</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="wf-list.html">workflow list</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="ag-new.html">new approver group</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="ag-list.html">approvers list</a>
+          <a class="nav-link" href="ag-list.html">Approver groups</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
-        <input id='search-field' class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <input id='search-field-ag' class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       </form>
     </div>
   </nav>
   <!-- End header -->
 
-  <!-- modal -->
+  <!-- modal - view approver groups from the table -->
   <div class="modal fade" id="ag-list" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -93,6 +87,69 @@
       </div>
     </div>
   </div>
+  <!-- end modal -->
+
+  <div class="submit-button-div col">
+    <button type="button" class="btn btn-secondary " data-toggle="modal" data-target="#ag-new">New approver group</button>
+  </div>
+</br>
+  <!-- modal - new approver group -->
+  <div class="modal fade" id="ag-new" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">New approver group</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form class="col">
+            <div class="form-group">
+              <label for="group-name">Group name</label>
+              <input type="text" class="form-control" id="group-name" aria-describedby="" required>
+              <small id="group-name__help" class="form-text text-muted">name your approver group</small>
+            </div>
+            <div class="form-group approver1">
+              <label for="exampleInputEmail1">Approver 1 email</label>
+              <input type="email" class="form-control" id="approver1input" aria-describedby="emailHelp" required>
+            </div>
+            <div class="form-group approver2">
+              <label for="exampleInputEmail1">Approver 2 email</label>
+              <input type="email" class="form-control" id="approver2input" aria-describedby="emailHelp">
+            </div>
+            <div class="form-group approver3">
+              <label for="exampleInputEmail1">Approver 3 email</label>
+              <input type="email" class="form-control" id="approver3input" aria-describedby="emailHelp">
+            </div>
+            <div class="form-group approver4 d-none">
+              <label for="exampleInputEmail1">Approver 4 email</label>
+              <input type="email" class="form-control" id="approver4input" aria-describedby="emailHelp">
+            </div>
+            <div class="form-group approver5 d-none">
+              <label for="exampleInputEmail1">Approver 5 email</label>
+              <input type="email" class="form-control" id="approver5input" aria-describedby="emailHelp">
+            </div>
+            <div class="d-flex justify-content-between">
+              <div>
+                <button class="btn btn-secondary" type="button" id="add-approver">Add</button>
+                <button class="btn btn-secondary" type="button" id="remove-approver">Remove</button>
+              </div>
+              <button type="submit" class="btn btn-secondary col-4" id="ag-submit">Submit</button>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end modal -->
+
+
+
 
   <!-- table - filled with JS -->
   <table class="table col">
@@ -108,25 +165,12 @@
   </thead>
   <tbody id='ag-table'>
     <tr>
-      <th scope="row">1</th>
-      <td class="ag-col0">Mark</td>
-      <td class="ag-col1">Otto</td>
-      <td class="ag-col2">@mdo</td>
-      <td class="ag-col3">kopa</td>
-      <td class="ag-col4">lat</td>
-      <td class="ag-col5">lat</td>
-    </tr>
-    <tr>
-      <td class="ag-col0">Mark</td>
-      <td class="ag-col1">Otto</td>
-      <td class="ag-col2">@mdo</td>
-      <td class="ag-col3">kopa</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
+      <th scope="row">name</th>
+      <td class="ag-col0">apr1</td>
+      <td class="ag-col1">apr2</td>
+      <td class="ag-col2">apr3</td>
+      <td class="ag-col3">apr4</td>
+      <td class="ag-col4">apr5</td>
     </tr>
   </tbody>
 </table>
