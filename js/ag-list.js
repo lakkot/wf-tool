@@ -6,6 +6,31 @@ var appGroup = (function () {
     { name: 'Group 2', appr1: 'michal.lichota@outlook.com', appr2: 'lakkot83@gmail.com', appr3: 'michal.lichota@hotmail.com', appr4: '', appr5: '' },
     { name: 'Group 3', appr1: 'michal.lichota@hotmail.com', appr2: 'michal.lichota@outlook.com', appr3: 'nowaera@gmail.com', appr4: '', appr5: '' }
   ]
+var apiUrl = 'https://workflow-tool.herokuapp.com/approvers' ;
+
+
+
+
+  fetch('https://workflow-tool.herokuapp.com/approvers')
+  .then(response => {
+    return response.json()
+  })
+  .then(data => {
+    approvers.push.apply(approvers, data);
+
+    //clear table and refill each line with
+  clearTable();
+  approvers.forEach(function (item) {
+    addListItem(item);
+  });
+  })
+
+  .catch(err => {
+    // Do something for an error here
+  })
+
+  console.log(approvers);
+
 
 
   var $groupName = document.querySelector('.ag-col0');
@@ -79,11 +104,8 @@ var appGroup = (function () {
 
   }
 
-  //clear table and refill each line with
-  clearTable();
-  approvers.forEach(function (item) {
-    addListItem(item);
-  });
+  
+  
 
 
   //remove columns if empty
@@ -169,6 +191,8 @@ var appGroup = (function () {
   }
 }());
 
+appGroup.getAll();
+
 var newApprover = (function () {
   var approvers = [
     { name: 'Group 1', appr1: 'lakkot83@gmail.com', appr2: 'michal.lichota@outlook.com', appr3: 'michal.lichota@hotmail.com', appr4: '', appr5: '' },
@@ -177,7 +201,6 @@ var newApprover = (function () {
     { name: 'Group 4', appr1: 'nowaera@gmail.com', appr2: 'michal.lichota@outlook.com', appr3: 'lakkot83@gmail.com', appr4: '', appr5: '' }
   ]
 
-  console.log(approvers);
 
 
 
