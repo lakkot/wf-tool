@@ -1,10 +1,10 @@
-var appGroup = (function() {
+var appGroup = (function () {
 
 
   var approvers = [
-    {name: 'Group 1', appr1: 'lakkot83@gmail.com', appr2: 'michal.lichota@outlook.com', appr3: 'michal.lichota@hotmail.com', appr4: '', appr5: 'b'},
-    {name: 'Group 2', appr1: 'michal.lichota@outlook.com', appr2: 'lakkot83@gmail.com', appr3: 'michal.lichota@hotmail.com', appr4: '', appr5: ''},
-    {name: 'Group 3', appr1: 'michal.lichota@hotmail.com', appr2: 'michal.lichota@outlook.com', appr3: 'nowaera@gmail.com', appr4: '', appr5: ''}
+    { name: 'Group 1', appr1: 'lakkot83@gmail.com', appr2: 'michal.lichota@outlook.com', appr3: 'michal.lichota@hotmail.com', appr4: '', appr5: '' },
+    { name: 'Group 2', appr1: 'michal.lichota@outlook.com', appr2: 'lakkot83@gmail.com', appr3: 'michal.lichota@hotmail.com', appr4: '', appr5: '' },
+    { name: 'Group 3', appr1: 'michal.lichota@hotmail.com', appr2: 'michal.lichota@outlook.com', appr3: 'nowaera@gmail.com', appr4: '', appr5: '' }
   ]
 
 
@@ -18,7 +18,7 @@ var appGroup = (function() {
   var $agTable = document.querySelector('#ag-table');
 
   function clearTable() {
-      $agTable.innerHTML = '';
+    $agTable.innerHTML = '';
   }
 
   function getAll() {
@@ -33,14 +33,14 @@ var appGroup = (function() {
 
     $agTableitem1 = document.createElement('th');
     $agTableitem1.classList.add('ag-col0');
-  /*
-    $agTableButton = document.createElement('button');
-    $agTableButton.classList.add('col');
-    $agTableButton.classList.add('table-button'); //btn btn-outline-dark align-middle
-    $agTableButton.classList.add('btn');
-    $agTableButton.classList.add('btn-outline-dark');
-    $agTableButton.innerText = item.name;
-  */
+    /*
+      $agTableButton = document.createElement('button');
+      $agTableButton.classList.add('col');
+      $agTableButton.classList.add('table-button'); //btn btn-outline-dark align-middle
+      $agTableButton.classList.add('btn');
+      $agTableButton.classList.add('btn-outline-dark');
+      $agTableButton.innerText = item.name;
+    */
     var $agTableButton = $('<button type="button" class="btn btn-outline-dark col table-button" data-toggle="modal" data-target="#ag-list"></button>').text(item.name);
     $($agTableitem1).append($agTableButton);
 
@@ -81,17 +81,17 @@ var appGroup = (function() {
 
   //clear table and refill each line with
   clearTable();
-  approvers.forEach(function(item) {
-      addListItem(item);
-    });
+  approvers.forEach(function (item) {
+    addListItem(item);
+  });
 
 
   //remove columns if empty
   var approvers2 = []
-  approvers.forEach(function(item) {
-      if (item.appr2 !== '') {
-        approvers2.push(item.appr2);
-      }
+  approvers.forEach(function (item) {
+    if (item.appr2 !== '') {
+      approvers2.push(item.appr2);
+    }
   });
 
   if (approvers2.length === 0) {
@@ -100,10 +100,10 @@ var appGroup = (function() {
   }
 
   var approvers3 = []
-  approvers.forEach(function(item) {
-      if (item.appr3 !== '') {
-        approvers3.push(item.appr3);
-      }
+  approvers.forEach(function (item) {
+    if (item.appr3 !== '') {
+      approvers3.push(item.appr3);
+    }
   });
 
   if (approvers3.length === 0) {
@@ -112,10 +112,10 @@ var appGroup = (function() {
   }
 
   var approvers4 = []
-  approvers.forEach(function(item) {
-      if (item.appr4 !== '') {
-        approvers4.push(item.appr4);
-      }
+  approvers.forEach(function (item) {
+    if (item.appr4 !== '') {
+      approvers4.push(item.appr4);
+    }
   });
 
   if (approvers4.length === 0) {
@@ -124,10 +124,10 @@ var appGroup = (function() {
   }
 
   var approvers5 = []
-  approvers.forEach(function(item) {
-      if (item.appr5 !== '') {
-        approvers5.push(item.appr5);
-      }
+  approvers.forEach(function (item) {
+    if (item.appr5 !== '') {
+      approvers5.push(item.appr5);
+    }
   });
 
   if (approvers5.length === 0) {
@@ -136,17 +136,17 @@ var appGroup = (function() {
   }
 
 
-  $(document).ready(function(){
-    $('#search-field-ag').on('keyup', function() {
+  $(document).ready(function () {
+    $('#search-field-ag').on('keyup', function () {
       var value = $(this).val().toLowerCase();
-      $('#ag-table tr').filter(function() {
+      $('#ag-table tr').filter(function () {
         $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
       });
     });
   });
 
 
-  $("button").click(function() { //on button click compare value on the button to approvers array and get index based on matching name
+  $("button").click(function () { //on button click compare value on the button to approvers array and get index based on matching name
     var fired_button = $(this).text();
     index = approvers.findIndex(item => item.name === fired_button);
     $('#ag-list').on('show.bs.modal', function (event) {
@@ -169,12 +169,12 @@ var appGroup = (function() {
   }
 }());
 
-var newApprover = (function() {
+var newApprover = (function () {
   var approvers = [
-    {name: 'Group 1', appr1: 'lakkot83@gmail.com', appr2: 'michal.lichota@outlook.com', appr3: 'michal.lichota@hotmail.com', appr4: '', appr5: ''},
-    {name: 'Group 2', appr1: 'michal.lichota@outlook.com', appr2: 'lakkot83@gmail.com', appr3: 'michal.lichota@hotmail.com', appr4: '', appr5: ''},
-    {name: 'Group 3', appr1: 'michal.lichota@hotmail.com', appr2: 'michal.lichota@outlook.com', appr3: 'nowaera@gmail.com', appr4: '', appr5: ''},
-    {name: 'Group 4', appr1: 'nowaera@gmail.com', appr2: 'michal.lichota@outlook.com', appr3: 'lakkot83@gmail.com', appr4: '', appr5: ''}
+    { name: 'Group 1', appr1: 'lakkot83@gmail.com', appr2: 'michal.lichota@outlook.com', appr3: 'michal.lichota@hotmail.com', appr4: '', appr5: '' },
+    { name: 'Group 2', appr1: 'michal.lichota@outlook.com', appr2: 'lakkot83@gmail.com', appr3: 'michal.lichota@hotmail.com', appr4: '', appr5: '' },
+    { name: 'Group 3', appr1: 'michal.lichota@hotmail.com', appr2: 'michal.lichota@outlook.com', appr3: 'nowaera@gmail.com', appr4: '', appr5: '' },
+    { name: 'Group 4', appr1: 'nowaera@gmail.com', appr2: 'michal.lichota@outlook.com', appr3: 'lakkot83@gmail.com', appr4: '', appr5: '' }
   ]
 
   console.log(approvers);
